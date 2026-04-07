@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Agent",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/scripts/hook/inject-plugin-root.sh\""
+          }
+        ],
+        "description": "Inject BRIDGIC_PLUGIN_ROOT into subagent prompts so they can locate skill files"
+      }
+    ]
+  }
+}
