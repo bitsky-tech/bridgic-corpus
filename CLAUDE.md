@@ -44,7 +44,7 @@ bridgic-corpus/
 
 ```bash
 # Register marketplace (one-time), then install
-claude plugin marketplace add github:bitsky-tech/bridgic-corpus
+claude plugin marketplace add bitsky-tech/bridgic-corpus
 claude plugin install bridgic-corpus
 ```
 

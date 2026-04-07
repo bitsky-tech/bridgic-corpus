@@ -22,7 +22,7 @@ Together, they enable an end-to-end pipeline: **explore a website via CLI** -> *
 
 ```bash
 # Step 1: Register the marketplace (one-time)
-claude plugin marketplace add github:bitsky-tech/bridgic-corpus
+claude plugin marketplace add bitsky-tech/bridgic-corpus
 
 # Step 2: Install the plugin
 claude plugin install bridgic-corpus
