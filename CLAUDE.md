@@ -1,12 +1,14 @@
-# Bridgic Plugin
+# Bridgic Corpus
 
-A Claude Code plugin for the Bridgic ecosystem — providing skills, agents, and commands for building high-quality bridgic projects. Skills cover the foundational specs; commands and agents orchestrate them into end-to-end workflows.
+Agent skill & knowledge corpus for the Bridgic ecosystem — providing skills, agents, and commands for building high-quality bridgic projects. Skills cover the foundational specs; commands and agents orchestrate them into end-to-end workflows.
 
 ## Architecture
 
 ```
-bridgic/
+bridgic-corpus/
 ├── CLAUDE.md                          ← this file
+├── .claude-plugin/
+│   └── plugin.json                    ← Claude Code plugin registration
 ├── skills/                            ← domain knowledge: "what it is, how to use it"
 │   ├── bridgic-browser/               ← browser automation CLI + SDK
 │   ├── bridgic-amphibious/            ← dual-mode agent framework
@@ -34,9 +36,15 @@ bridgic/
 
 | Type | Purpose | Example |
 |------|---------|---------|
-| **Skill** | Domain knowledge reference — loaded on-demand by agents | bridgic-browser, bridgic-amphibious, bridgic-llms, bridgic-env, ... |
-| **Agent** | Deep execution methodology — delegated by commands | browser-explorer, amphibious-generator, amphibious-verify, ... |
-| **Command** | Multi-step orchestrator invoked by user | /browser-to-amphibious, ... |
+| **Skill** | Domain knowledge reference — loaded on-demand by agents | bridgic-browser, bridgic-amphibious, bridgic-llms, bridgic-env |
+| **Agent** | Deep execution methodology — delegated by commands | browser-explorer, amphibious-generator, amphibious-verify |
+| **Command** | Multi-step orchestrator invoked by user | /browser-to-amphibious |
+
+## Installation
+
+```bash
+claude plugin install github:bitsky-tech/bridgic-corpus
+```
 
 ## Skills
 

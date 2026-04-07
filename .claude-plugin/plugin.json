@@ -1,0 +1,16 @@
+{
+  "name": "bridgic-corpus",
+  "version": "1.0.0",
+  "description": "Agent skill & knowledge corpus for the Bridgic ecosystem",
+  "agents": [
+    "./agents/browser-explorer.md",
+    "./agents/amphibious-generator.md",
+    "./agents/amphibious-verify.md"
+  ],
+  "skills": [
+    "./skills/"
+  ],
+  "commands": [
+    "./commands/"
+  ]
+}
