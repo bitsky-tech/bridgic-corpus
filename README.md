@@ -18,13 +18,19 @@ Together, they enable an end-to-end pipeline: **explore a website via CLI** -> *
 
 ## Installation
 
-### Option 1: AS Claude Code Plugin (full plugin — skills + agents + commands)
+### Option 1: Claude Code Plugin (full plugin — skills + agents + commands)
 
 ```bash
-# From GitHub
-claude plugin install github:bitsky-tech/bridgic-corpus
+# Step 1: Register the marketplace (one-time)
+claude plugin marketplace add github:bitsky-tech/bridgic-corpus
 
-# From local directory
+# Step 2: Install the plugin
+claude plugin install bridgic-corpus
+```
+
+Or install directly from a local checkout:
+
+```bash
 git clone https://github.com/bitsky-tech/bridgic-corpus.git
 claude plugin install /path/to/bridgic-corpus
 ```
