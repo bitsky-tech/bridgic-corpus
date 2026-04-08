@@ -34,13 +34,16 @@ if [ -z "$SKILL_NAME" ]; then
   exit 0
 fi
 
-# Check if skill name matches a command file in this plugin (exact match)
+# Strip plugin namespace prefix if present (e.g. "bridgic-corpus:browser-to-amphibious" → "browser-to-amphibious")
+BARE_NAME="${SKILL_NAME##*:}"
+
+# Check if bare skill name matches a command file in this plugin (exact match)
 MATCHED=false
 if [ -d "$ROOT/commands" ]; then
   for f in "$ROOT"/commands/*.md; do
     [ -f "$f" ] || continue
     name=$(basename "$f" .md)
-    if [ "$SKILL_NAME" = "$name" ]; then
+    if [ "$BARE_NAME" = "$name" ]; then
       MATCHED=true
       break
     fi
