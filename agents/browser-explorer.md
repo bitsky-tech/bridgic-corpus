@@ -102,7 +102,7 @@ uv run bridgic-browser close
 
 ## Generate Report
 
-Write `exploration_report.md` and all snapshot files — the report reflects all progress made so far.
+Write `exploration_report.md` and all snapshot files — the report reflects all progress made so far. The report contains **exactly two sections** — no additional sections. All observations gathered during exploration (ref stability, edge cases, behavioral quirks) go into **inline `#` comments** within the Operation Sequence.
 
 ### 1. Operation Sequence
 
@@ -129,14 +129,14 @@ A pseudocode-style operation list. Use indentation and control-flow keywords (`F
 ```
 
 **Rules**:
-- One line per critical operation — exclude snapshots, tab checks, file reads
+- **One line per critical operation** — exclude `snapshot`, `tabs`, `wait`, file reads, and any other observation/timing steps that are implicit in every action cycle
+- **Behavioral notes as `#` comments**: edge cases, timing notes, component quirks go in trailing comments. When a note is too long for one line, continue on the next line at the same indent with another `#`
 - **Ref and stability inline**: append `[ref=<hex> STABLE|VOLATILE]` after the operation target
 - **Control flow**: use indentation to indicate nesting; use explicit keywords for loops and conditions:
   - `WHILE <condition>:` — condition-driven repetition: repeat until a termination signal is observed (total iterations unknown upfront)
   - `FOR each <item> in <collection>:` — collection-driven iteration: enumerate a known/visible set of elements on the current page
   - `IF <condition>:` / `ELSE:` — branching on observed page state; `ELSE:` sits at the same indent as the IF body, sub-numbers continue sequentially under the same parent
 - **Human intervention**: `HUMAN:` is a special marker indicating the operation requires human interaction to proceed. Describe what the human must do and the signal to resume.
-- **Behavioral notes as `#` comments**: edge cases, timing notes, component quirks go in trailing comments. When a note is too long for one line, continue on the next line at the same indent with another `#`
 
 ### 2. Snapshot Files
 

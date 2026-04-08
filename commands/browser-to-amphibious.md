@@ -63,8 +63,8 @@ Accept the browser task from the user (direct string or file path). Extract:
 
 | Mode | Behavior |
 |------|----------|
-| **Quick** (default) | No `user-data-dir` overrides — all phases share the browser's default profile. Faster, reuses existing cookies/sessions. |
-| **Isolated** | Each phase gets its own `user-data-dir`, ensuring a clean browser state per phase. Useful when login state or cookies from one phase must not leak into another. |
+| **Quick** (default) | No `user-data-dir` overrides — all phases share the browser's default profile. |
+| **Isolated** | Each phase gets its own `user-data-dir`, ensuring a clean browser state per phase. |
 
 Record the chosen mode — it affects Phases 3, 4, and 5.
 
