@@ -61,7 +61,6 @@ Available skills for `--skill`:
 | `bridgic-browser-agent` | Browser agent patterns with OOP and dynamic ref resolution |
 | `bridgic-amphibious` | Dual-mode agent framework (LLM-driven + deterministic) |
 | `bridgic-llms` | LLM provider integration (OpenAI, OpenAILike, vLLM) |
-| `bridgic-env` | Environment specification (uv, Python 3.10, dependencies) |
 
 > **Note:** The `npx skills` method installs **skills only**. For the full experience (agents, commands, hooks), use the Claude Code plugin install.
 
@@ -108,7 +107,6 @@ Skills are domain knowledge references that agents and Claude load automatically
 | **bridgic-browser-agent** | Building browser automation agents with OOP patterns and dynamic ref resolution |
 | **bridgic-amphibious** | Building dual-mode agents with `AmphibiousAutoma`, `CognitiveWorker`, `on_agent`/`on_workflow` |
 | **bridgic-llms** | Initializing LLM providers (`OpenAILlm`, `OpenAILikeLlm`, `VllmServerLlm`) |
-| **bridgic-env** | Setting up a bridgic project environment (uv, dependencies, `.env`) |
 
 ## Architecture
 
@@ -116,13 +114,12 @@ Skills are domain knowledge references that agents and Claude load automatically
 bridgic-corpus/
 ├── .claude-plugin/
 │   └── plugin.json              # Plugin registration
-├── skills/                      # Domain knowledge (6 skills)
+├── skills/                      # Domain knowledge (5 skills)
 │   ├── bridgic-basic/           #   Core framework concepts
 │   ├── bridgic-browser/         #   Browser automation CLI + SDK
 │   ├── bridgic-browser-agent/   #   Browser agent patterns
 │   ├── bridgic-amphibious/      #   Dual-mode agent framework
-│   ├── bridgic-llms/            #   LLM provider integration
-│   └── bridgic-env/             #   Environment specification
+│   └── bridgic-llms/            #   LLM provider integration
 ├── agents/                      # Execution methodology (3 agents)
 │   ├── browser-explorer.md      #   CLI exploration expert
 │   ├── amphibious-generator.md  #   Code generation expert
@@ -137,6 +134,8 @@ bridgic-corpus/
     ├── hook/
     │   └── inject-plugin-root.sh
     └── run/
+        ├── setup-env.sh            #   Environment setup (uv, deps, playwright)
+        ├── check-dotenv.sh         #   LLM configuration validation
         └── monitor.sh
 ```
 

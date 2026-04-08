@@ -9,7 +9,7 @@
     {
       "name": "bridgic-corpus",
       "source": "./",
-      "description": "Skills, agents, and commands for bridgic-browser, bridgic-amphibious, bridgic-llms, and bridgic-env",
+      "description": "Skills, agents, and commands for bridgic-browser, bridgic-amphibious, and bridgic-llms",
       "version": "1.0.0",
       "author": {
         "name": "Bitsky Tech"

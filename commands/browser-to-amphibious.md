@@ -20,7 +20,7 @@ CLI exploration → SDK code generation → verification.
 ```
 /browser-to-amphibious (command)
     │
-    ├── reads from: bridgic-env (skill)
+    ├── runs: setup-env.sh (script)
     │
     ├── delegates to: browser-explorer (agent)
     │     └── reads from: bridgic-browser (skill)
@@ -41,7 +41,7 @@ CLI exploration → SDK code generation → verification.
 
 ```
 1. Parse Task Input         (this command)
-2. Setup Environment        (this command, reads bridgic-env skill)
+2. Setup Environment        (this command, runs setup-env.sh)
 3. CLI Exploration          (→ browser-explorer agent)
 4. Generate Amphibious Code (→ amphibious-generator agent)
 5. Verify                   (→ amphibious-verify agent)
@@ -62,14 +62,31 @@ Confirm understanding with the user before proceeding.
 
 ## Phase 2: Setup Environment
 
-Read the **bridgic-env** skill to get the correct versions and repository configuration, then ensure the environment is ready:
+Two independent checks — run in order:
 
-1. **Check or create `pyproject.toml`** — use the template from bridgic-env (correct dependency versions, btsk-repo index, uv sources).
-2. **Install dependencies** — `uv sync`
-3. **Install browser binaries** — `uv run playwright install chromium` (if not already installed)
-4. **Check `.env`** — ensure `LLM_API_KEY`, `LLM_API_BASE`, `LLM_MODEL` are set. If missing, ask the user to provide them.
+### 2a. Virtual environment
 
-Do not proceed until the environment is verified.
+```bash
+bash "${BRIDGIC_PLUGIN_ROOT}/scripts/run/setup-env.sh"
+```
+
+Handles: uv check → pyproject.toml creation → `uv sync` → Playwright Chromium install.
+
+- **Exit 0**: dependencies ready. Capture the `ENV_READY` block from stdout.
+- **Exit 1**: `uv` not installed. Tell the user to install it and stop.
+
+### 2b. Model configuration
+
+```bash
+bash "${BRIDGIC_PLUGIN_ROOT}/scripts/run/check-dotenv.sh"
+```
+
+Validates `LLM_API_KEY`, `LLM_API_BASE`, `LLM_MODEL` are available (from environment variables or `.env` file). Never prints values.
+
+- **Exit 0**: all variables present.
+- **Exit 1**: missing variables listed in output. Ask the user to provide them, then re-run.
+
+Capture the `ENV_READY` block from setup-env.sh as the environment details passed to later phases. Do not proceed until both scripts exit 0.
 
 ---
 
