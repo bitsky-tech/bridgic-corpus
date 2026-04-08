@@ -67,7 +67,7 @@ Two independent checks — run in order:
 ### 2a. Virtual environment
 
 ```bash
-bash "${BRIDGIC_PLUGIN_ROOT}/scripts/run/setup-env.sh"
+bash "scripts/run/setup-env.sh"
 ```
 
 Handles: uv check → pyproject.toml creation → `uv sync` → Playwright Chromium install.
@@ -78,7 +78,7 @@ Handles: uv check → pyproject.toml creation → `uv sync` → Playwright Chrom
 ### 2b. Model configuration
 
 ```bash
-bash "${BRIDGIC_PLUGIN_ROOT}/scripts/run/check-dotenv.sh"
+bash "scripts/run/check-dotenv.sh"
 ```
 
 Validates `LLM_API_KEY`, `LLM_API_BASE`, `LLM_MODEL` are available (from environment variables or `.env` file). Never prints values.
