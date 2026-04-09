@@ -136,7 +136,7 @@ Pass to the agent:
 
 **Domain reference files to read**:
 - `bridgic-browser` skill — `{PLUGIN_ROOT}/skills/bridgic-browser/references/sdk-guide.md` and `{PLUGIN_ROOT}/skills/bridgic-browser/references/cli-sdk-api-mapping.md` for SDK tool names and usage
-- `{PLUGIN_ROOT}/commands/references/build-browser-code-patterns.md` — browser-specific code patterns for all project files
+- `{PLUGIN_ROOT}/examples/build-browser-code-patterns.md` — browser-specific code patterns for all project files
 
 **Browser-specific per-file rules** (override or supplement the agent's general rules):
 

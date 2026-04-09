@@ -96,9 +96,9 @@ AmphiLoop/
 │   ├── amphibious-generator.md  #   代码生成专家
 │   └── amphibious-verify.md     #   项目验证专家
 ├── commands/                    # 用户可调用的工作流
-│   ├── build-browser.md         #   端到端流水线
-│   └── references/
-│       └── build-browser-code-patterns.md
+│   └── build-browser.md         #   端到端流水线
+├── examples/                    # 静态示例文档（不会被自动扫描）
+│   └── build-browser-code-patterns.md
 ├── hooks/                       # 自动加载的事件处理器
 │   └── hooks.json
 └── scripts/                     # Hook 与工具脚本

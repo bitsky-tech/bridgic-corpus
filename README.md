@@ -96,9 +96,9 @@ AmphiLoop/
 │   ├── amphibious-generator.md  #   Code generation expert
 │   └── amphibious-verify.md     #   Project verification expert
 ├── commands/                    # User-invocable workflows
-│   ├── build-browser.md         #   End-to-end pipeline
-│   └── references/
-│       └── build-browser-code-patterns.md
+│   └── build-browser.md         #   End-to-end pipeline
+├── examples/                    # Static example docs (not auto-scanned)
+│   └── build-browser-code-patterns.md
 ├── hooks/                       # Auto-loaded event handlers
 │   └── hooks.json
 └── scripts/                     # Hook & utility implementations

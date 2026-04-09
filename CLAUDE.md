@@ -20,9 +20,9 @@ AmphiLoop/
 │   ├── amphibious-generator.md        ← code generation expertise
 │   └── amphibious-verify.md           ← project verification expertise
 ├── commands/                          ← user-invocable workflows (thin orchestrators)
-│   ├── build-browser.md               ← /build-browser pipeline
-│   └── references/
-│       └── build-browser-code-patterns.md ← browser-specific code patterns
+│   └── build-browser.md               ← /build-browser pipeline
+├── examples/                          ← static example docs (not auto-scanned by Claude Code)
+│   └── build-browser-code-patterns.md ← browser-specific code patterns
 ├── hooks/                             ← auto-loaded by Claude Code
 │   ├── hooks.json                     ← hook definitions
 │   └── README.md                      ← hook system documentation
