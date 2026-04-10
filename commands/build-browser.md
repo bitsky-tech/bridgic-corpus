@@ -19,9 +19,7 @@ CLI exploration → SDK code generation → verification.
 
 ```
 /build-browser (command)
-    │
     ├── runs: setup-env.sh (script)
-    │
     ├── delegates to: browser-explorer (agent)
     ├── delegates to: amphibious-generator (agent)
     └── delegates to: amphibious-verify (agent)

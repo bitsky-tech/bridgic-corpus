@@ -102,7 +102,7 @@ uv run bridgic-browser close
 
 ## Generate Report
 
-Write `exploration_report.md` and all snapshot files — the report reflects all progress made so far. The report contains **exactly two sections** — no additional sections. All observations gathered during exploration (ref stability, edge cases, behavioral quirks) go into **inline `#` comments** within the Operation Sequence.
+Write `exploration_report.md` and all snapshot files — the report reflects all progress made so far. The report contains **exactly two sections — no additional sections**. All observations gathered during exploration (ref stability, edge cases, behavioral quirks) go into **inline `#` comments** within the Operation Sequence.
 
 ### 1. Operation Sequence
 
