@@ -14,7 +14,11 @@ A bridgic-browser project requires the following packages:
 
 Additionally, browser binaries must be installed once: `uv run playwright install chromium`.
 
-**Installation**: Check if the working directory already has a uv environment (`pyproject.toml` exists). If yes, add the missing packages directly. If not, run `uv init` first to initialize the environment, then add them. The agent executing this skill should decide the appropriate steps based on the current environment state.
+**Installation**: Run the install script to set up all dependencies:
+```bash
+bash "skills/bridgic-browser/scripts/install-deps.sh" "$PROJECT_ROOT"
+```
+The script checks uv availability, initializes a uv project if needed, installs missing packages, and ensures Playwright chromium is available.
 
 ## Strategies & Guidelines (Important!!)
 

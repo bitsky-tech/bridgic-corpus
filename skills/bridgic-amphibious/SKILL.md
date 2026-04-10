@@ -18,7 +18,11 @@ A bridgic-amphibious project requires the following packages:
 | `bridgic-llms-openai` | LLM provider|
 | `python-dotenv` | `.env` file loading |
 
-**Installation**: Check if the working directory already has a uv environment (`pyproject.toml` exists). If yes, add the missing packages directly. If not, run `uv init` first to initialize the environment, then add them. The agent executing this skill should decide the appropriate steps based on the current environment state.
+**Installation**: Run the install script to set up all dependencies:
+```bash
+bash "skills/bridgic-amphibious/scripts/install-deps.sh" "$PROJECT_ROOT"
+```
+The script checks uv availability, initializes a uv project if needed, and installs only missing packages.
 
 ## LLM Setup
 
