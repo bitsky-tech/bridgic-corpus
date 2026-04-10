@@ -6,11 +6,10 @@
         "hooks": [
           {
             "type": "command",
-            "if": "Skill(AmphiLoop:*)",
             "command": "bash \"${CLAUDE_PLUGIN_ROOT}/scripts/hook/inject-command-paths.sh\""
           }
         ],
-        "description": "Inject PLUGIN_ROOT and PROJECT_ROOT when Claude auto-invokes a bridgic command via the Skill tool. Engine-level `if` gate ensures only AmphiLoop-namespaced Skill calls spawn the script."
+        "description": "Inject PLUGIN_ROOT and PROJECT_ROOT when Claude auto-invokes a bridgic command via the Skill tool. NOTE: an `if: \"Skill(AmphiLoop:*)\"` engine-level gate would be ideal, but the Skill tool has no documented permission-rule specifier syntax — the engine evaluator returns false for any `Skill(...)` pattern and the hook never fires (verified via debug log). Cross-plugin filtering is therefore enforced inside inject-command-paths.sh by the strict `case \"$SKILL_NAME\" in \"AmphiLoop\":*)` branch."
       }
     ],
     "UserPromptSubmit": [
